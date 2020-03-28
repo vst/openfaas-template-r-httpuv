@@ -27,7 +27,7 @@ cd sandbox
 Pull this template:
 
 ```
-faas-cli template pull https://github.com/vst/openfaas-template-r-httpuv
+faas-cli template pull "https://github.com/vst/openfaas-template-r-httpuv#0.0.2"
 ```
 
 Create your new OpenFAAS function, namely `myfunc`:
