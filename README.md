@@ -1,6 +1,6 @@
 # OpenFAAS Template using R httpuv Application as Upstream
 
-![](https://img.shields.io/github/v/release/vst/openfaas-templates)
+![](https://img.shields.io/github/v/release/vst/openfaas-template-r-httpuv)
 
 This template provides an R function which uses new style
 `watchdog` (`of-watchdog`). Therefore:
