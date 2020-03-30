@@ -1,4 +1,4 @@
-# OpenFAAS Template using R httpuv Application as Upstream
+# OpenFaaS Template using R httpuv Application as Upstream
 
 ![](https://img.shields.io/github/v/release/vst/openfaas-template-r-httpuv)
 
@@ -13,7 +13,7 @@ This template provides an R function which uses new style
 
 1. R
 2. Docker
-3. OpenFAAS CLI
+3. OpenFaaS CLI
 
 ## Quickstart
 
@@ -30,13 +30,13 @@ Pull this template:
 faas-cli template pull "https://github.com/vst/openfaas-template-r-httpuv#0.0.2"
 ```
 
-Create your new OpenFAAS function, namely `myfunc`:
+Create your new OpenFaaS function, namely `myfunc`:
 
 ```
 faas-cli new myfunc --lang vst-r-httpuv
 ```
 
-Change directory to your new OpenFAAS function:
+Change directory to your new OpenFaaS function:
 
 ```
 cd myfunc
@@ -50,14 +50,14 @@ Now you can make changes to code and test as you wish:
 3. `application.R` This is where you will expose business logic
    (functionality provided in `library.R`) as an HTTP endpoint.
 
-To build the OpenFAAS function:
+To build the OpenFaaS function:
 
 ```
 cd ..
 faas-cli build -f myfunc.yml
 ```
 
-Run the Docker image that is built as an OpenFAAS function:
+Run the Docker image that is built as an OpenFaaS function:
 
 ```
 docker run --rm -p 8000:8080 myfunc
