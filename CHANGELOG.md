@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.0.4](https://github.com/vst/openfaas-template-r-httpuv/compare/0.0.3...0.0.4) (2020-04-03)
+
+
+### Features
+
+* **docs:** improve documentation ([53f7ad1](https://github.com/vst/openfaas-template-r-httpuv/commit/53f7ad17c0acfbce5fb0c667b95379ee9fbb35e8))
+
 ### [0.0.3](https://github.com/vst/openfaas-template-r-httpuv/compare/0.0.2...0.0.3) (2020-03-30)
 
 
