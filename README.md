@@ -136,7 +136,7 @@ You can see endpoints now:
 ... should be as easy as:
 
 ```
-faas-cli up -a -f my-first-function.yml
+faas-cli up -a -f my-r-function.yml
 ```
 
 ## Notes about implementing your function
