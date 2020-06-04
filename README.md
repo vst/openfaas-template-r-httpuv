@@ -51,7 +51,7 @@ function.
 Let's pull the R-based template first:
 
 ```
-faas-cli template pull "https://github.com/vst/openfaas-template-r-httpuv#0.0.4"
+faas-cli template pull "https://github.com/vst/openfaas-template-r-httpuv#0.0.5"
 ```
 
 ... then create our function using the pulled `vst-r-httpuv` template:

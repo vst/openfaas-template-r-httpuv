@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.0.5](https://github.com/vst/openfaas-template-r-httpuv/compare/0.0.4...0.0.5) (2020-06-04)
+
+
+### Features
+
+* add query parameters helper ([a5d1989](https://github.com/vst/openfaas-template-r-httpuv/commit/a5d19896e609b887a0cf7626e0c0f7b10708d680))
+
+
+### Bug Fixes
+
+* **docs:** use correct stack file for deployment ([023df9d](https://github.com/vst/openfaas-template-r-httpuv/commit/023df9de50813a0831e78e59aa145501d312b94e))
+
 ### [0.0.4](https://github.com/vst/openfaas-template-r-httpuv/compare/0.0.3...0.0.4) (2020-04-03)
 
 
