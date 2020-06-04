@@ -11,6 +11,16 @@ handlers <- list(
     fw_response(sprintf("Hello %s!", name), mimetype = "text/plain")
   }),
   list(method = "GET", path = "/", func = function(request, ...) {
-    fw_response("Hello World!", mimetype = "text/plain")
+    ## Get query parameters:
+    params <- fw_queryparams(request$QUERY_STRING)
+
+    ## Get the salute:
+    salute <- ifelse("salute" %in% names(params), params$salute, "Hello")
+
+    ## Get the name:
+    name <- ifelse("name" %in% names(params), params$name, "World")
+
+    ## Compile the response and return:
+    fw_response(sprintf("%s %s!", salute, name), mimetype = "text/plain")
   })
 )

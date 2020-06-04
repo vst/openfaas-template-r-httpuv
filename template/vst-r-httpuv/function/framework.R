@@ -39,12 +39,58 @@ fw_dispatch <- function(handlers, request) {
   fw_response("Not found.", status = 404, mimetype = "text/plain")
 }
 
+##' Provides a utility function to parse querystring into a named list of parameters.
+##'
+##' @param querystring Querystring.
+##' @return A named list of querystring parameters.
+fw_queryparams <- function(querystring) {
+  ## Do we have any querystring?
+  if (!is.character(querystring)) {
+    return(list())
+  }
+
+  ## Attempt to parse the query:
+  parsed_query <- .parse_querystring(querystring)
+
+  ## Parsed query is not in good shape. Fix it:
+  query_object <- try(split(unname(parsed_query), names(parsed_query)))
+
+  ## If we have an error, return it:
+  if (class(query_object) == "try-error") {
+    return(query_object)
+  }
+
+  ## Re-touch the query object and return:
+  lapply(query_object, unlist)
+}
+
 ##' Provides a utility function to parse path segments for a given PATH_INFO.
 ##'
 ##' @param pathinfo PATH_INFO request attribute.
 ##' @return A character vector of path segments.
 .parse_path_segments <- function(path) {
   Filter(function(x) x != "", unlist(strsplit(path, "/")))
+}
+
+##' Parses a given querystring.
+## Credits: Jeroen for webutils.
+.parse_querystring <- function(query) {
+    if (is.raw(query))
+        query <- rawToChar(query);
+    stopifnot(is.character(query));
+
+    ## httpuv includes the question mark in query string
+    query <- sub("^[?]", "", query)
+    query <- chartr("+", " ", query)
+
+    ## split by & character
+    argstr <- strsplit(query, "&", fixed = TRUE)[[1]]
+    args <- lapply(argstr, function(x) {
+        curl::curl_unescape(strsplit(x, "=", fixed = TRUE)[[1]])
+    })
+    values <- lapply(args, `[`, 2)
+    names(values) <- vapply(args, `[`, character(1), 1)
+    return(values)
 }
 
 ##' Provides a utility function to check if given string is a path variable.
